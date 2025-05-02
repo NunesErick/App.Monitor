@@ -1,7 +1,7 @@
 # 🚀 WorkerService - Monitoramento de Serviços
 
 ![.NET](https://img.shields.io/badge/.NET-9-%23512bd4)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-%23316192)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14-%23316192)
 
 O **WorkerService** é um serviço backend robusto e eficiente projetado para monitorar a disponibilidade de serviços e links em tempo real, com armazenamento de dados em PostgreSQL.
 
