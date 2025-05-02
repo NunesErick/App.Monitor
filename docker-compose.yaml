@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app-monitor:
+    image: app-monitor:latest
+    container_name: app_monitor
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production

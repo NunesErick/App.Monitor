@@ -1,0 +1,38 @@
+trigger:
+- main
+
+resources:
+- repo: self
+
+pool:
+  name: Default ##Substitua pelo nome do seu pool de agentes
+
+stages:
+- stage: BuildAndDeploy
+  jobs:
+  - job: BuildAndDeployAppMonitor
+    displayName: 'Build and deploy'
+    steps: 
+
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          set -e
+          
+          echo "🚀 Iniciando atualização do projeto..."
+          
+          cd /var/projects/App.Monitor
+          git checkout master
+          echo "🛠 Resetando possíveis mudanças locais..."
+
+          echo "🔄 Atualizando código do repositório..."
+          git pull origin master || { echo "❌ Erro ao atualizar repositório"; exit 1; }
+
+          echo "🛑 Parando containers..."
+          docker-compose down || echo "⚠️ Nenhum container rodando para parar"
+
+          echo "🚀 Subindo novos containers..."
+          docker-compose up -d --build || { echo "❌ Erro ao subir os containers"; exit 1; }
+
+          echo "✅ Deploy concluído com sucesso!"
