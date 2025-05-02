@@ -60,6 +60,7 @@ dotnet run
 
 🔍 Arquitetura do Sistema
 O WorkerService segue um fluxo otimizado para monitoramento:
+```mermaid
 graph TD
     A[Início do Worker] --> B[Consultar serviços no BD]
     B --> C[Para cada serviço]
