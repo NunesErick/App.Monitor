@@ -16,7 +16,7 @@ namespace App.Monitor
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _logger.LogInformation("Monitoramento iniciado às {data}", DateTimeOffset.Now);
+            _logger.LogInformation("Monitoring started at {date}", DateTimeOffset.Now);
             await _monitor.ActivateMonitor(stoppingToken);
         }
     }

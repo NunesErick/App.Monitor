@@ -1,10 +1,10 @@
-﻿using Monitor.Infrastructure.DTO;
+﻿using Monitor.Infrastructure.Data.AppContext.Models;
 
 namespace Monitor.Domain.Interfaces
 {
     public interface IMonitor
     {
-        Task<List<AppDTO>> GetApps();
-        Task ActiveMonitor(AppDTO app, CancellationToken cancellationToken);
+        Task<List<App>> GetApps();
+        Task ActiveMonitor(App app, CancellationToken cancellationToken);
     }
 }
